@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="utf-8">
+        <title>Home! - A-Frame</title>
+        <meta name="description" content="Hello, World! - A-Frame">
+        <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+      <a-assests>
+
+          <!-- chair -->
+              <a-asset-item id="chair-obj" src="Assets/Flow Chair obj/Flow Chair.obj"></a-asset-item>
+              <a-asset-item id="chair-mtl" src="Assets/Flow Chair obj/Flow Chair.mtl"></a-asset-item>
+
+          <!-- bed -->
+              <a-asset-item id="bed-obj" src="Assets/fbde03.obj"></a-asset-item>
+              <a-asset-item id="bed-mtl" src="Assets/fbde03.mtl"></a-asset-item>
+          <!-- bed lamp -->
+              <a-asset-item id="bedlamp-obj" src="Assets/Lamp_001_OBJ/Lamp_001.obj"></a-asset-item>
+              <a-asset-item id="bedlamp-mtl" src="Assets/Lamp_001_OBJ/Lamp_001.mtl"></a-asset-item>
+
+          <!-- Table -->
+              <a-asset-item id="table-obj" src="Assets/tbl014_OBJ/tbl014.obj"></a-asset-item>
+              <a-asset-item id="table-mtl" src="Assets/tbl014_OBJ/tbl014.mtl"></a-asset-item>
+
+          <!-- Sofa -->
+              <a-asset-item id="sofa-obj" src="Assets/73-sofa/Sofa.obj"></a-asset-item>
+              <a-asset-item id="sofa-mtl" src="Assets/73-sofa/Sofa.mtl"></a-asset-item>
+
+
+          <!-- plant -->
+              <a-asset-item id="plant-obj" src="Assets/Chlorophytum_obj/D_Plant.obj"></a-asset-item>
+              <a-asset-item id="plant-mtl" src="Assets/Chlorophytum_obj/D_Plant.mtl"></a-asset-item>
+
+          <!-- window -->
+              <a-asset-item id="window01" src="Assets/Janela+arqueada/model.dae"></a-asset-item>
+              <img id="window01_texture" src="Assets/Janela+arqueada/model/__Wood_Cherry_Original_1.jpg">
+
+          <!-- Door -->
+              <a-asset-item id="door-obj" src="Assets/InteriorDoorObj/InteriorDoor.obj"></a-asset-item>
+              <a-asset-item id="door-mtl" src="Assets/InteriorDoorObj/InteriorDoor.mtl"></a-asset-item>
+
+          <!-- Pictures -->
+              <img id="pic01" src="img/pic01.png">
+              <img id="pic02" src="img/pic02.png">
+              <img id="pic03" src="img/pic03.png">
+
+          <!-- Desk -->
+              <a-asset-item id="desk-obj" src="Assets/Tablel_arhiv_vray_obj/Table_obj.obj"></a-asset-item>
+              <a-asset-item id="desk-mtl" src="Assets/Tablel_arhiv_vray_obj/Table_obj.mtl"></a-asset-item>
+
+          <!-- rack -->
+              <a-asset-item id="rack-obj" src="Assets/dm_065_AlvarAalto106_OBJ/AlvarAalto106.obj"></a-asset-item>
+              <a-asset-item id="rack-mtl" src="Assets/dm_065_AlvarAalto106_OBJ/AlvarAalto106.mtl"></a-asset-item>
+          <!-- rug texture -->
+              <img id="rug_texture" src="img/rug.jpg">
+
+          <!-- wall texture -->
+              <img id="wall" src="img/wall.jpg">
+
+          <!-- stairs texture -->
+              <img id="stairs" src="img/stairs.jpg">
+
+          <!-- ground texture -->
+              <img id="groundTexture" src="img/ground.jpg">
+          </a-assests>
+
+        <!-- Controller -->
+                <a-entity position="0.5 0 0.7">
+                    <a-camera universal-controls="fly: true;
+                         movementEasing: 15;
+                         movementAcceleration: 80;">
+                        <a-entity raycaster="far: 150; objects: .intersectable" cursor geometry="primitive: ring; radiusOuter: 0.015;
+                                      radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="0 0 -0.75"></a-entity>
+                    </a-camera>
+                </a-entity>
+
+        <!-- sky -->
+              <a-sky
+              geometry="primitive: sphere; radius: 5000.0; height: 1000; segmentsHeight: 20; segmentsWidth: 64"
+              material="color: #ffffff"
+              id="sky">
+              </a-sky>
+
+
+        <!-- Second Floor -->
+        <!-- guard -->
+              <a-cylinder
+              position="-4.392 0.7 -1.631"
+              radius="0.3"
+              height="0.4"
+              src="img/stairs.jpg"
+              id="guard 01">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-5.057 0.85 -1.064"
+              radius="0.3"
+              height="0.4"
+              src="img/stairs.jpg"
+              id="guard 02"
+              geometry="height:0.7">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-5.725 0.8 -0.524"
+              radius="0.3"
+              height="0.4"
+              src="img/stairs.jpg"
+              id="guard 03"
+              geometry="height:0.6">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-6.395 0.7 0.036"
+              radius="0.3"
+              height="0.4"
+              src="img/stairs.jpg"
+              id="guard 04">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-7.072 0.8 0.554"
+              radius="0.3"
+              height="0.4"
+              src="img/stairs.jpg"
+              id="guard 05"
+              geometry="height:0.6">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-7.78 0.85 1.137"
+              radius="0.3"
+              height="0.4"
+              src="img/stairs.jpg"
+              id="guard 06"
+              geometry="height:0.7">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-8.457 0.7 1.702"
+              radius="0.3"
+              height="0.4"
+              src="img/stairs.jpg"
+              id="guard 07">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-9.13 0.8 2.21"
+              radius="0.3"
+              height="0.4"
+              src="img/stairs.jpg"
+              id="guard 08"
+              geometry="height:0.6">
+              </a-cylinder>
+
+        <!-- bed -->
+                <a-entity
+                        scale="0.07 0.07 0.07"
+                        position="-0.314 1.369 -0.947"
+                        obj-model="mtl:Assets/fbde03.mtl;obj:Assets/fbde03.obj"
+                        id="bed"
+                        rotation="0 137.3379834928583 0">
+                </a-entity>
+
+        <!-- bedlamp -->
+                <a-entity
+                        scale="0.015 0.015 0.015"
+                        position="-0.982 1.408 8.528"
+                        obj-model="obj:Assets/Lamp_001_OBJ/Lamp_001.obj"
+                        id="bedlamp"
+                        rotation="0 137.338 0">
+                </a-entity>
+        <!-- ceiling lamp -->
+                <a-sphere
+                        position="0 10 0"
+                        rotation="90 0 0"
+                        radius="1"
+                        material="offset:NaN NaN;flatShading:true;shader:flat;side:double;transparent:true;repeat:NaN NaN;color:#ffffff;height:256.65"
+                        id="ceilinglamp"
+                        geometry="phiLength:180">
+                </a-sphere>
+                <a-light
+                        type="point"
+                        color="white"
+                        position="0 9.5 0"
+                        radius="40"
+                        id="toplight"
+                        light="distance:30">
+                </a-light>
+        <!-- plant -->
+                <a-entity
+                        scale="0.02 0.02 0.02"
+                        position="-7.484 1.278 2.918"
+                        obj-model="mtl:Assets/Chlorophytum_obj/D_Plant.mtl;obj:Assets/Chlorophytum_obj/D_Plant.obj"
+                        id="plant01"
+                        rotation="-87.37606375745054 180.02333923010465 180.02333923010465">
+                </a-entity>
+
+        <!-- rug -->
+                <a-box
+                        position="0.612 0.55 1.959"
+                        rotation="0 -40.049749879644544 0"
+                        geometry="depth:2;height:0.05;width:4"
+                        src="img/rug.jpg"
+                        id="rug"
+                        scale="1.4 1.4 1.4">
+                </a-box>
+
+        <!-- desk -->
+                <a-entity
+                        scale="0.002 0.002 0.002"
+                        position="8.065 0.538 2.066"
+                        obj-model="mtl:Assets/Tablel_arhiv_vray_obj/Table_obj.mtl;obj:Assets/Tablel_arhiv_vray_obj/Table_obj.obj"
+                        material="src: url(Assets/Tablel_arhiv_vray_obj/Table_10079_Alamo_Eiche_110519_05.jpg)"
+                        id="desk"
+                        rotation="0 0 0">
+                </a-entity>
+
+        <!-- Pictures -->
+                <a-box
+                        position="-4.725 4.906 8.666"
+                        rotation="90 -30 180"
+                        geometry="depth:2;height:0.05;width:4"
+                        src="img/pic01.png"
+                        id="pic01"
+                        scale="0.7 1.4 1.4">
+                </a-box>
+
+                <a-box
+                        position="-3.295 7.596 9.138"
+                        rotation="90 -20 180"
+                        geometry="depth:2;height:0.05;width:4"
+                        src="img/pic02.png"
+                        id="pic02">
+                </a-box>
+
+                <a-box
+                        position="-7.284 6.141 6.439"
+                        rotation="90 -40 180"
+                        geometry="depth:2;height:0.05;width:4"
+                        src="img/pic03.png"
+                        id="pic03"
+                        scale="0.5 0.7 0.9"
+                        class="intersectable">
+                    <a-animation begin="click" attribute="position" from="-7.284 6.141 6.439" to= "-7.284 4.8 6.439" dur="3000"></a-animation>
+                </a-box>
+
+        <!-- Chair -->
+
+                <a-entity
+                        obj-model="mtl:Assets/Flow Chair obj/Flow Chair.mtl;obj:Assets/Flow Chair obj/Flow Chair.obj"
+                        material="src: url(Assets/Flow Chair obj/narra.jpg)"
+                        id="chair"
+                        position="6.642 0.906 0.875"
+                        scale="0.01 0.01 0.01">
+                </a-entity>
+
+        <!-- First Floor -->
+
+        <!-- Ground -->
+              <a-plane
+              src="img/ground.jpg"
+              position="0 -9.5 0"
+              rotation="-90 0 0"
+              width="30"
+              height="30"
+              repeat="10 10"
+              id= "ground">
+              </a-plane>
+
+        <!-- ceilinglamp -->
+                <a-sphere
+                        position="-1.368 0.483 0.861"
+                        radius="1"
+                        material="flatShading:true;offset:NaN NaN;repeat:NaN NaN;shader:flat;side:double;transparent:true;color:#ffffff;height:256.65"
+                        id="ceilinglamp-2"
+                        rotation="90 0 0"
+                        geometry="phiLength:180">
+                </a-sphere>
+                <a-light
+                        type="point"
+                        color="white"
+                        position="-1.387 -0.289 0.889"
+                        radius="40"
+                        light="distance:30"
+                        id="bottomlight">
+                </a-light>
+
+        <!-- Table -->
+                <a-entity
+                        obj-model="mtl:Assets/tbl014_OBJ/tbl014.mtl;obj:Assets/tbl014_OBJ/tbl014.obj"
+                        id="table"
+                        position="-2.606 -9.499 1.397"
+                        scale="0.002 0.002 0.001"
+                        rotation="-90 90 0">
+                </a-entity>
+
+        <!-- Sofa -->
+                <a-entity
+                        scale="0.002 .002 .002"
+                        position="3 -9.3 1.5"
+                        obj-model="obj: Assets/73-sofa/Sofa.obj"
+                        material="src: url(Assets/73-sofa/texturses/669170.jpg)"
+                        id="sofa">
+                </a-entity>
+        <!-- rack -->
+
+                <a-entity
+                        obj-model="mtl:Assets/dm_065_AlvarAalto106_OBJ/AlvarAalto106.mtl;obj:Assets/dm_065_AlvarAalto106_OBJ/AlvarAalto106.obj"
+                        id="rack"
+                        position="8.611 -9.507 2.861"
+                        scale="0.004 0.004 0.004">
+                </a-entity>
+
+        <!-- Cylinder Room -->
+        <a-entity
+                geometry="primitive:cylinder;height:20;radius:10"
+                material="side:double;src:img/wall.jpg;repeat:8 5"
+                id="room">
+        </a-entity>
+
+
+
+
+<!-- Floor -->
+      <a-ring 
+        side="double"
+        position="-2 .5 -4.5"
+        rotation="90 40 0"
+        src="https://aframe.io/sample-assets/assets/images/wood/hardwood2_diffuse.jpg"
+        scale="1 1 1"
+        geometry="primitive: ring; radiusInner: 3; radiusOuter: 15; thetaLength: 180;height: 0.0"
+        id="floor">
+      </a-ring>
+
+        <!-- stairs -->
+              <a-cylinder
+                position="-1 0.0 -3.6"
+                radius="0.35"
+                height="20.0"
+                src="img/stairs.jpg"
+                id="stair">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-1 0.0 -3.6"
+              rotation=" 0 60 0"
+              scale="3 1 1"
+              radius="0.7"
+              height="0.2"
+              src="img/stairs.jpg"
+              id="stair 01">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-1 -1.0 -3.6"
+              rotation=" 0 90 0"
+              scale="3 1 1"
+              radius="0.7"
+              height="0.2"
+              src="img/stairs.jpg"
+              id="stair 02">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-1 -2 -3.6"
+              rotation=" 0 120 0"
+              scale="3 1 1"
+              radius="0.7"
+              height="0.2"
+              src="img/stairs.jpg"
+              id="stair 03">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-1 -3 -3.6"
+              rotation=" 0 150 0"
+              scale="3 1 1"
+              radius="0.7"
+              height="0.2"
+              src="img/stairs.jpg"
+              id="stair 04">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-1 -4 -3.6"
+              rotation=" 0 180 0"
+              scale="3 1 1"
+              radius="0.7"
+              height="0.2"
+              src="img/stairs.jpg"
+              id="stair 05">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-1 -5 -3.6"
+              rotation=" 0 210 0"
+              scale="3 1 1"
+              radius="0.7"
+              height="0.2"
+              src="#stairs"
+              id="stair 06">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-1 -6 -3.6"
+              rotation=" 0 240 0"
+              scale="3 1 1"
+              radius="0.7"
+              height="0.2"
+              src="img/stairs.jpg"
+              id="stair 07">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-1 -7 -3.6"
+              rotation=" 0 270 0"
+              scale="3 1 1"
+              radius="0.7"
+              height="0.2"
+              src="img/stairs.jpg"
+              id="stair 08">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-1 -8 -3.6"
+              rotation=" 0 300 0"
+              scale="3 1 1"
+              radius="0.7"
+              height="0.2"
+              src="img/stairs.jpg"
+              id="stair 09">
+              </a-cylinder>
+
+              <a-cylinder
+              position="-1 -9 -3.6"
+              rotation=" 0 330 0"
+              scale="3 1 1"
+              radius="0.7"
+              height="0.2"
+              src="img/stairs.jpg"
+              id="stair 10">
+              </a-cylinder>
+
+        <!-- Windows -->
+
+                <a-collada-model
+                        src="#window01"
+                        position="5.89 3.088 7.371"
+                        rotation="0 50 0"
+                        material="transparent:true;src:Assets/Janela+arqueada/model/__Wood_Cherry_Original_1.jpg"
+                        id="window01"
+                        scale="4 3 1.4"
+                        collada-model="Assets/Janela+arqueada/model.dae">
+                </a-collada-model>
+
+
+                <a-collada-model
+                        src="#window01"
+                        position="7.906 3.088 -6.343"
+                        rotation="0 145 0"
+                        material="transparent:true;src:Assets/Janela+arqueada/model/__Wood_Cherry_Original_1.jpg"
+                        id="window02"
+                        scale="4 3 1.4"
+                        collada-model="Assets/Janela+arqueada/model.dae"></a-collada-model>
+
+                <a-collada-model
+                        src="#window01"
+                        position="-9.263 -6.836 3.412"
+                        rotation="0 -50 0"
+                        material="transparent:true;src:Assets/Janela+arqueada/model/__Wood_Cherry_Original_1.jpg"
+                        id="window03"
+                        scale="4 3 1.4"
+                        collada-model="Assets/Janela+arqueada/model.dae"></a-collada-model>
+
+
+                <a-collada-model
+                        src="#window01"
+                        position="-4.95 3.088 -8.825"
+                        rotation="0 -135 0"
+                        material="transparent:true;src:Assets/Janela+arqueada/model/__Wood_Cherry_Original_1.jpg"
+                        id="window04"
+                        scale="4 3 1.4"
+                        collada-model="Assets/Janela+arqueada/model.dae"></a-collada-model>
+
+                <a-collada-model
+                        src="#window01"
+                        position="5.923 -6.401 -8.149"
+                        rotation="0 160 0"
+                        material="transparent:true;src:Assets/Janela+arqueada/model/__Wood_Cherry_Original_1.jpg"
+                        id="window05"
+                        scale="4 3 1.4"
+                        collada-model="Assets/Janela+arqueada/model.dae"></a-collada-model>
+
+        <!-- Door -->
+                <a-entity
+                        scale="0.08 0.08 0.08"
+                        position="6.633 -9.422 6.751"
+                        obj-model="mtl:Assets/InteriorDoorObj/InteriorDoor.mtl;obj:Assets/InteriorDoorObj/InteriorDoor.obj"
+                        id="Door"
+                        rotation="0 46.52417296462285 0">
+                </a-entity>
+
+
+
+
+
+            </a-scene>
+          </body>
+        </html>
